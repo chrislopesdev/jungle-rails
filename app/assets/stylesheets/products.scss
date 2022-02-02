@@ -82,3 +82,31 @@ main section.products-show {
     }
   }
 }
+
+.dashboard {
+  display: flex;
+  justify-content: space-between;
+  gap: 4rem;
+
+  &__info {
+    flex-grow: 1;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 6rem;
+    border-radius: 5px;
+    background: rgb(223, 38, 249);
+    background: linear-gradient(
+      140deg,
+      rgba(223, 38, 249, 1) 0%,
+      rgba(109, 0, 255, 1) 100%
+    );
+  }
+
+  &__count {
+    font-size: 56px;
+    color: #fff;
+  }
+}
