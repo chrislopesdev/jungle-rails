@@ -110,3 +110,37 @@ main section.products-show {
     color: #fff;
   }
 }
+
+.container {
+  position: relative;
+}
+
+.navbar-brand {
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: bold;
+  background: -webkit-linear-gradient(-40deg, #df26f9, #6d00ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.navbar-right {
+  // margin-right: 200px;
+}
+
+.login-links {
+  // position: absolute;
+  width: max-content;
+  top: 0;
+  right: 0;
+  margin: 0px 18px 0px 0px;
+  padding: 15px 20px;
+  color: #fff;
+  background: rgb(223, 38, 249);
+  background: linear-gradient(140deg, #df26f9 0%, #6d00ff 100%);
+
+  & a,
+  & a:visited {
+    color: #fff;
+  }
+}
