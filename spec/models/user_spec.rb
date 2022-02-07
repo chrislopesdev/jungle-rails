@@ -3,12 +3,6 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   
   describe 'User Validations' do
-    
-    # it 'password and password_confirmation fields should match' do
-    #   @user = User.new(name: 'Chris', last_name: 'Lopes', email: 'chris@email.com', password: 'qwerty', password_confirmation: nil )
-
-    #   expect(@user.password).to eq(@user.password_confirmation)
-    # end
 
     it 'password and password_confirmation fields should match' do
       @user = User.new(name: 'Chris', last_name: 'Lopes', email: 'chris@email.com', password: 'qwerty', password_confirmation: 'qwerty' )
@@ -81,6 +75,13 @@ RSpec.describe User, type: :model do
       @user.save
 
       expect(User.authenticate_with_credentials(' chris@email.com ', 'qwerty')).to eq(@user)
+    end
+
+    it 'should authenticate email if email is different case' do
+      @user = User.new(name: 'Chris', last_name: 'Lopes', email: 'CHRIS@email.com', password: 'qwerty')
+      @user.save
+
+      expect(User.authenticate_with_credentials(' CHRiS@email.com ', 'qwerty')).to eq(@user)
     end
 
   end
